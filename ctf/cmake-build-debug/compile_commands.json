@@ -1,0 +1,8 @@
+[
+{
+  "directory": "C:/Users/Romstain/Desktop/newyearLMS/ctf/cmake-build-debug",
+  "command": "C:\\PROGRA~1\\JETBRA~1\\CLION2~1.1\\bin\\mingw\\bin\\gcc.exe -g -std=gnu11 -fdiagnostics-color=always -o CMakeFiles\\ctf.dir\\vuln.c.obj -c C:\\Users\\Romstain\\Desktop\\newyearLMS\\ctf\\vuln.c",
+  "file": "C:/Users/Romstain/Desktop/newyearLMS/ctf/vuln.c",
+  "output": "C:/Users/Romstain/Desktop/newyearLMS/ctf/cmake-build-debug/CMakeFiles/ctf.dir/vuln.c.obj"
+}
+]
