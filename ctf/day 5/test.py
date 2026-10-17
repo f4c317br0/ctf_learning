@@ -1,5 +1,5 @@
 import socket
-HOST, PORT = "chatelaine.cylabacademy.net", 40748   # порт из ТЕКУЩЕГО инстанса
+HOST, PORT = "chatelaine.cylabacademy.net", 40748
 
 s = socket.create_connection((HOST, PORT), timeout=10)
 print("prompt:", s.recv(4096))
