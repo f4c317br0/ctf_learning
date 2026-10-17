@@ -22,9 +22,8 @@ def query(pt: bytes) -> int:
             last = e
             time.sleep(0.5)
     raise RuntimeError(f"server unreachable: {last!r}")
-HOST, PORT = "chatelaine.cylabacademy.net", 40748   # проверьте порт в вашем инстансе
+HOST, PORT = "chatelaine.cylabacademy.net", 40748
 
-# --- генерация стандартного AES S-box ---
 def gen_sbox():
     rotl = lambda x, s: ((x << s) | (x >> (8 - s))) & 0xFF
     sbox = [0] * 256
@@ -43,14 +42,13 @@ def gen_sbox():
 Sbox = gen_sbox()
 assert Sbox[0] == 0x63 and Sbox[1] == 0x7C and Sbox[0x53] == 0xED
 
-# --- один запрос = одно соединение ---
 def query(pt: bytes) -> int:
-    for _ in range(5):                      # повтор при сбое
+    for _ in range(5):                    
         try:
             s = socket.create_connection((HOST, PORT), timeout=10)
             f = s.makefile("rwb")
             f.readline() if False else None
-            s.recv(4096)                    # приглашение "Please provide..."
+            s.recv(4096)               
             s.sendall(pt.hex().encode() + b"\n")
             data = b""
             while b"leakage result:" not in data or not data.endswith(b"\n"):
